@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumByte Network Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>QuantumByte Network Management</h1>
+    </header>
+    <main>
+        <section id="predict-issues">
+            <h2>Predict Network Issues</h2>
+            <button onclick="predictIssues()">Predict Issues</button>
+            <p id="prediction-result"></p>
+        </section>
+        <section id="optimize-performance">
+            <h2>Optimize Network Performance</h2>
+            <button onclick="optimizePerformance()">Optimize</button>
+            <p id="optimization-result"></p>
+        </section>
+        <section id="manage-clouds">
+            <h2>Manage Clouds</h2>
+            <a href="/manage_clouds">Go to Cloud Management</a>
+        </section>
+        <section id="simulate-network">
+            <h2>Simulate Network</h2>
+            <button onclick="simulateNetwork()">Run Simulation</button>
+            <p id="simulation-result"></p>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

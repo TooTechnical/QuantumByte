@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumByte Cloud Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>QuantumByte Cloud Management</h1>
+    </header>
+    <main>
+        <form id="cloud-config-form">
+            <label for="cloud-provider">Cloud Provider:</label>
+            <select id="cloud-provider" name="cloud-provider">
+                <option value="aws">AWS</option>
+                <option value="azure">Azure</option>
+                <option value="gcp">Google Cloud</option>
+            </select>
+            <label for="region">Region:</label>
+            <input type="text" id="region" name="region">
+            <button type="submit">Update Configuration</button>
+        </form>
+        <p id="config-result"></p>
+    </main>
+    <script src="{{ url_for('static', filename='cloud-management.js') }}"></script>
+</body>
+</html>
