@@ -5,30 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuantumByte Network Management</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 <body>
     <header>
         <h1>QuantumByte Network Management</h1>
     </header>
     <main>
-        <section id="predict-issues">
-            <h2>Predict Network Issues</h2>
-            <button onclick="predictIssues()">Predict Issues</button>
+        <section id="system-stats">
+            <h2>System Statistics</h2>
+            <canvas id="system-chart"></canvas>
+        </section>
+        <section id="network-tools">
+            <h2>Network Tools</h2>
+            <div>
+                <h3>Ping Server</h3>
+                <input type="text" id="ping-server" placeholder="Enter server address">
+                <button onclick="pingServer()">Ping</button>
+                <p id="ping-result"></p>
+            </div>
+            <div>
+                <h3>DNS Lookup</h3>
+                <input type="text" id="dns-domain" placeholder="Enter domain name">
+                <button onclick="dnsLookup()">Lookup</button>
+                <p id="dns-result"></p>
+            </div>
+            <div>
+                <h3>Port Scan</h3>
+                <input type="text" id="scan-host" placeholder="Enter host">
+                <input type="text" id="scan-ports" placeholder="Enter ports (comma-separated)">
+                <button onclick="portScan()">Scan</button>
+                <p id="scan-result"></p>
+            </div>
+        </section>
+        <section id="network-prediction">
+            <h2>Network Issue Prediction</h2>
+            <input type="number" id="latency" placeholder="Latency (ms)">
+            <input type="number" id="packet-loss" placeholder="Packet Loss (%)">
+            <input type="number" id="jitter" placeholder="Jitter (ms)">
+            <button onclick="predictIssue()">Predict</button>
             <p id="prediction-result"></p>
         </section>
-        <section id="optimize-performance">
-            <h2>Optimize Network Performance</h2>
-            <button onclick="optimizePerformance()">Optimize</button>
-            <p id="optimization-result"></p>
-        </section>
-        <section id="manage-clouds">
-            <h2>Manage Clouds</h2>
-            <a href="/manage_clouds">Go to Cloud Management</a>
-        </section>
-        <section id="simulate-network">
-            <h2>Simulate Network</h2>
-            <button onclick="simulateNetwork()">Run Simulation</button>
-            <p id="simulation-result"></p>
+        <section id="network-graph">
+            <h2>Network Topology</h2>
+            <div id="graph"></div>
         </section>
     </main>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
